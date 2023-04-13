@@ -12,8 +12,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import models.EmailObject;
-import models.MessageWithAttachment;
+import com.iktpreobuka.emailexampletwo.models.EmailObject;
 
 @Service
 public class EmailServiceImpl implements EmailService {

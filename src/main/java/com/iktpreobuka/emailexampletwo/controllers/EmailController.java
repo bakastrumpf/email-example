@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.iktpreobuka.emailexampletwo.models.EmailObject;
 import com.iktpreobuka.emailexampletwo.services.EmailService;
-
-import models.EmailObject;
 
 @RestController
 @RequestMapping("/")
