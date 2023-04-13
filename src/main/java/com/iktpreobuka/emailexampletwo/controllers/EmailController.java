@@ -18,8 +18,10 @@ public class EmailController {
 
 	private static String PATH_TO_ATTACHMENT = "C:/home/montekrista/Desktop/gospode.jpg";
 
+	// testiramo slanje poruke
 	@RequestMapping(method = RequestMethod.POST, path = "/simpleEmail")
 	public String sendSimpleEmail(@RequestBody EmailObject emailObject) {
+		// ako su prazna polja vratićemo NULL
 		if (emailObject == null || emailObject.getTo() == null || emailObject.getText() == null)
 			return null;
 		emailService.sendSimpleEmailMessage(emailObject);

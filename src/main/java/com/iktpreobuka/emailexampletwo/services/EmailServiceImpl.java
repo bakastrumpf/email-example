@@ -23,10 +23,13 @@ public class EmailServiceImpl implements EmailService {
 	@Override
 	public void sendSimpleEmailMessage(EmailObject emailObject) {
 
+		// pravimo novu poruku tipa SimpleMailMessage
 		SimpleMailMessage mail = new SimpleMailMessage();
+		// kome šaljemo tu poruku? To smo dobili od emailObject, što je klasa za slanje podataka, kroz getTo
 		mail.setTo(emailObject.getTo());
 		mail.setSubject(emailObject.getSubject());
 		mail.setText(emailObject.getText());
+		// da bismo poslali mejl, treba nam servis JavaMailSender, koji ubacujemo kroz Autowired
 		emailSender.send(mail);
 	}
 
