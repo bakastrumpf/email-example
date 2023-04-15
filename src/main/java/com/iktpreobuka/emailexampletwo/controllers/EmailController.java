@@ -27,6 +27,17 @@ public class EmailController {
 		emailService.sendSimpleEmailMessage(emailObject);
 		return "Email message sent successfully!";
 	}
+	
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/templateEmail")
+	public String sendTemplateMessage(@RequestBody EmailObject object) throws Exception {
+	if(object==null || object.getTo()==null || object.getText()==null) {
+		return null;
+	}
+	emailService.sendTemplateMessage(object);
+		return "Your mail has been sent!";
+	}
+	
 
 	@RequestMapping(method = RequestMethod.POST, value = "/emailWithAttachment")
 	public String sendMessageWithAttachment(@RequestBody EmailObject object) throws Exception {
@@ -36,6 +47,8 @@ public class EmailController {
 		emailService.sendMessageWithAttachment(object, PATH_TO_ATTACHMENT);
 		return "Email message sent successfully!";
 	}
+
+	
 
 }
 
