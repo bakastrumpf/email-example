@@ -8,7 +8,7 @@ public class MessageWithAttachment {
 	private String subject;
 	private String text;
 	private File file; 
-	// private body attachment; 
+	// private File attachment; 
 	
 	
 	public MessageWithAttachment() {
